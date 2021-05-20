@@ -39,9 +39,7 @@ module OmniAuth
       end
 
       extra do
-        {
-          'raw_info' => raw_info
-        }
+        { 'raw_info' => raw_info }
       end
 
       # The Notion API requires HTTP Basic Authentication when exchanging the
@@ -69,32 +67,6 @@ module OmniAuth
 
       def callback_url
         full_host + script_name + callback_path
-      end
-
-      # def callback_url
-      #   if @authorization_code_from_signed_request
-      #     ''
-      #   else
-      #     options[:callback_url] || super
-      #   end
-      # end
-
-      # def callback_url
-      #   # If redirect_uri is configured in token_params, use that
-      #   # value.
-      #   token_params.to_hash(symbolize_keys: true)[:redirect_uri] || super
-      # end
-
-      def query_string
-        # This method is called by callback_url, only if redirect_uri
-        # is omitted in token_params.
-        if request.params['code']
-          # If this is a callback, ignore query parameters added by
-          # the provider.
-          ''
-        else
-          super
-        end
       end
     end
   end
