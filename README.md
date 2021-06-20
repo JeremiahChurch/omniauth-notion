@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write instructions
+1. Get your client key & secret from notion [here](https://www.notion.so/my-integrations)
+2. configure omniauth or Devise or whatever you're using to use this as another oauth provider.
+
+This looks something like below for Devise.
+```ruby
+Devise.setup do |config|
+  ...
+  config.omniauth :notion, ENV['NOTION_CLIENT_KEY'], ENV['NOTION_CLIENT_SECRET']
+end
+```
 
 ## Contributing
 
