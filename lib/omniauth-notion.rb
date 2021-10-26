@@ -22,6 +22,10 @@ module OmniAuth
           },
         }
 
+      option :authorize_params, {
+        owner: 'user',
+      }
+
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
       # additional calls (if the user id is returned with the token
@@ -32,8 +36,10 @@ module OmniAuth
       # https://developers.notion.com/docs/authorization#exchanging-the-grant-for-an-access-token
       info do
         {
+          workspace_id: raw_info['workspace_id'],
           workspace_name: raw_info['workspace_name'],
           workspace_icon: raw_info['workspace_icon'],
+          owner: raw_info['owner'],
           bot_id: raw_info['bot_id']
         }
       end
