@@ -2,6 +2,10 @@
 
 This gem provides a simple way to authenticate to Notion using OmniAuth with OAuth2.
 
+> **OmniAuth version compatibility**
+> - `omniauth-notion >= 1.0` requires OmniAuth 2.x
+> - `omniauth-notion ~> 0.0.3` supports OmniAuth 1.x (no longer maintained)
+
 ## Installation
 
 Add this line to your application's Gemfile:
