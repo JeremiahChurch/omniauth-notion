@@ -33,6 +33,19 @@ Devise.setup do |config|
 end
 ```
 
+## Releasing
+
+Releases are published to RubyGems automatically via GitHub Actions using [trusted publishing](https://guides.rubygems.org/trusted-publishing/).
+
+To release a new version:
+
+1. Update the version in `lib/omniauth-notion/version.rb`
+2. Update `CHANGELOG.md`
+3. Commit and push to `master`
+4. Tag and push: `git tag v1.x.x && git push origin v1.x.x`
+
+The `v*` tag push triggers the release workflow, which builds and publishes the gem.
+
 ## Contributing
 
 1. Fork it
